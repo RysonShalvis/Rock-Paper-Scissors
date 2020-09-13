@@ -123,9 +123,6 @@ function rating () {
             else if (stars[i].classList.contains('far')) {
                 stars[i].classList.remove('far');
                 stars[i].classList.add('fas');
-                //below is jquery attempt
-               /* $("div.star:nth-child(3)").prevAll().removeClass('far');
-                $("div.star:nth-child(3)").nextAll().addClass('fas'); */
                 for (j = 0; j < stars.length; j++) {
                     
                     if (j >= i) {
@@ -134,14 +131,6 @@ function rating () {
                     stars[j].classList.remove('far');
                     stars[j].classList.add('fas');
                 } // below is first attempt
-               /* stars[i - 1].classList.remove('far');
-                stars[i - 1].classList.add('fas');
-                stars[i - 2].classList.remove('far');
-                stars[i - 2].classList.add('fas');
-                stars[i - 3].classList.remove('far');
-                stars[i - 3].classList.add('fas');
-                stars[i - 4].classList.remove('far');
-                stars[i - 4].classList.add('fas'); */
                 //checking for solid star and next star is solid too then changing to empty star
             }  else if (stars[i].classList.contains('fas') && stars[i + 1].classList.contains('fas')) {
                 for (k = stars.length - 1; k >= 0; k--) {
@@ -150,15 +139,7 @@ function rating () {
                     }
                     stars[k].classList.remove('fas');
                     stars[k].classList.add('far'); 
-                } // below is first attempt
-                /*stars[i + 1].classList.remove('fas');
-                stars[i + 1].classList.add('far');
-                stars[i + 2].classList.remove('fas');
-                stars[i + 2].classList.add('far');
-                stars[i + 3].classList.remove('fas');
-                stars[i + 3].classList.add('far');
-                stars[i + 4].classList.remove('fas');
-                stars[i + 4].classList.add('far'); */
+                }
             } //checking if solid then changing to empty
              else if (stars[i].classList.contains('fas')) {
                 stars[i].classList.remove('fas');
@@ -169,16 +150,7 @@ function rating () {
                     }
                     stars[l].classList.remove('fas');
                     stars[l].classList.add('far'); 
-                } //below is first attempt
-               /* stars[i + 1].classList.remove('fas');
-                stars[i + 1].classList.add('far');
-                stars[i + 2].classList.remove('fas');
-                stars[i + 2].classList.add('far');
-                stars[i + 3].classList.remove('fas');
-                stars[i + 3].classList.add('far');
-                stars[i + 4].classList.remove('fas');
-                stars[i + 4].classList.add('far'); */
-                
+                }
             }
         }
     }
@@ -262,47 +234,9 @@ function submit () {
     for (m = 0; m < stars.length; m++) {
         stars[m].classList.remove('fas');
         stars[m].classList.add('far');
-    } // below is first attempt
-   /* star1.classList.remove('fas');
-    star1.classList.add('far');
-    star2.classList.remove('fas');
-    star2.classList.add('far');
-    star3.classList.remove('fas');
-    star3.classList.add('far');
-    star4.classList.remove('fas');
-    star4.classList.add('far');
-    star5.classList.remove('fas');
-    star5.classList.add('far');*/
+    }
 }
 submitReview.onclick = submit;
 }
 
 starRating();
-
-//attempt 2 for rating system
-/*
-const s1 = document.querySelector('#box5');
-const s2 = document.querySelector('#box4');
-const s3 = document.querySelector('#box3');
-const s4 = document.querySelector('#box2');
-const s5 = document.querySelector('#box1');
-
-
-
-function attempt () {
-
-
-
-
-    event.target.style.backgroundColor = 'blue';
-    console.log('change to blue')
-
-
-}
-
-s1.addEventListener('click', attempt);
-s2.addEventListener('click', attempt);
-s3.addEventListener('click', attempt);
-s4.addEventListener('click', attempt);
-s5.addEventListener('click', attempt);
-*/
